@@ -3,6 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
   <parameter name="browser" value="Chrome"></parameter>
+  <groups>
+  <run>
+  <include name="Regression"></include>
+  </run>
+  </groups>
     <classes>
       <class name="testscript.ManageCategoryTest"/>
       <class name="testscript.AdminUsersTest"/>
