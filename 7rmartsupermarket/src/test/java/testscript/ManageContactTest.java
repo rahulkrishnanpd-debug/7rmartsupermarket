@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
-import pages.ManageContact;
+import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base {
@@ -19,7 +19,7 @@ public class ManageContactTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.signIn();
 		
-		ManageContact contact=new ManageContact(driver);
+		ManageContactPage contact=new ManageContactPage(driver);
 		
 		int phonevalue=ExcelUtility.getIntegerData(1, 0, "contactpage");
 		String emailvalue=ExcelUtility.getStringData(1, 1, "contactpage");

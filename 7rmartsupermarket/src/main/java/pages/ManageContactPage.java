@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ManageContact {
+import utilities.PageUtility;
+
+public class ManageContactPage {
 public WebDriver driver;
 @FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-contact']")WebElement managecontact;
 @FindBy(xpath="//i[contains(@class,'fas fa-edit')]")WebElement edit;
@@ -17,7 +19,7 @@ public WebDriver driver;
 @FindBy(xpath="//input[@id='del_limit']")WebElement deliverychargelimit;
 @FindBy(xpath="//button[@type='submit']")WebElement update;
 
-public ManageContact(WebDriver driver)
+public ManageContactPage(WebDriver driver)
 {
 	this.driver=driver;
 	PageFactory.initElements(driver, this);
@@ -57,8 +59,8 @@ public void enterDeliveryCharge(int deliverycharge)
 }
 public void clickOnUpdate()
 {
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	js.executeScript("window.scrollBy(0,150)","");
+	PageUtility obj=new PageUtility();
+	obj.pageScroll(driver);
 	update.click();
 }
 }

@@ -3,6 +3,7 @@ package testscript;
 import java.io.IOException;
 
 import org.openqa.selenium.Alert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.AdminUsersPage;
@@ -19,8 +20,8 @@ public class AdminUsersTest extends Base {
 		loginpage.enterUserName(usernamevalue);
 		loginpage.enterPassword(passwordvalue);
 		loginpage.signIn();
-		AdminUsersPage admin=new AdminUsersPage(driver);
-		admin.clickOnAdminUsers();
+		//AdminUsersPage admin=new AdminUsersPage(driver);
+		//admin.clickOnAdminUsersMoreInfo();
 		//admin.clickOnAlert();
 		
 	}
@@ -39,12 +40,16 @@ public class AdminUsersTest extends Base {
 	    String username1=ExcelUtility.getStringData(1, 0, "adminuserspage");
 	    String password1=ExcelUtility.getStringData(1, 1, "adminuserspage");
 	    String usertype=ExcelUtility.getStringData(1, 2, "adminuserspage");
-		admin.clickOnAdminUsers();
+		admin.clickOnAdminUsersMoreInfo();
+		boolean adminusers=admin.isAdminDashboardDisplayed();
+	    Assert.assertTrue(adminusers);
 	    admin.clickOnNew();
 	    admin.enterUserName(username1);
 	    admin.enterPassword(password1);
 	    admin.dropDownVisibleText(usertype);
 	    admin.save();
+	    boolean useriscreated=admin.isUserCreatedAlertDisplayed();
+	    Assert.assertTrue(useriscreated);
 }
 
 }

@@ -2,11 +2,13 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
-import pages.ManageCategory;
+import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 public class ManageCategoryTest extends Base {
 	@Test
@@ -19,15 +21,20 @@ public class ManageCategoryTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.signIn();
 		
-		ManageCategory category=new ManageCategory(driver);
+		ManageCategoryPage category=new ManageCategoryPage(driver);
+		FakerUtility faker=new FakerUtility();
+		String categoryname=faker.generateCategory();
 		
-		String categoryname=ExcelUtility.getStringData(1, 0, "managecategorypage");
-		category.clickOnManageCategory();
+		//String categoryname=ExcelUtility.getStringData(1, 0, "managecategorypage");
+		category.clickOnManageCategoryMoreInfo();
+		boolean listcategory=category.isCategoryDashboardDisplayed();
+		Assert.assertTrue(listcategory);
 		category.clickOnNewCategory();
 		category.enterCategory(categoryname);
 		category.clickOnDiscount();
 		category.clickOnChooseFile();
 		category.clickOnSave();
+		
 	}
 
 }

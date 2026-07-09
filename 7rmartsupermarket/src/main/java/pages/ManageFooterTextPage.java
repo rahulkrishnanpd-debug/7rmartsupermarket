@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ManageFooterText {
+import utilities.WaitUtility;
+
+public class ManageFooterTextPage {
 	public WebDriver driver;
 	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-footertext']")WebElement managefooter;
 	@FindBy(xpath="//a[@class='btn btn-sm btn btn-primary btncss' and @href='https://groceryapp.uniqassosiates.com/admin/Footertext/edit?edit=1']")WebElement action;
@@ -18,7 +20,7 @@ public class ManageFooterText {
 	@FindBy(xpath="//input[@id='phone']")WebElement phone;
 	@FindBy(xpath="//button[@type='submit']")WebElement update;
 	
-	public ManageFooterText(WebDriver driver)
+	public ManageFooterTextPage(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -48,8 +50,8 @@ public class ManageFooterText {
 	}
 	public void clickOnUpdate()
 	{
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(update));
+		WaitUtility obj=new WaitUtility();
+		obj.waitForElementToBeClickable(driver, update);
 		update.click();
 	}
 

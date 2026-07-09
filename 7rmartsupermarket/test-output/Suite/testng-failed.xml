@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="testscript.ManageNewsTest">
+        <methods>
+          <include name="verifyUserIsAbleToAccessManageNewsPageSuccessfully"/>
+          <include name="initializebrowser"/>
+          <include name="closebrowser"/>
+        </methods>
+      </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.ManageContactTest">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="initializebrowser"/>
+          <include name="userIsAbleToAccessManageContactModule"/>
+        </methods>
+      </class> <!-- testscript.ManageContactTest -->
+      <class name="testscript.ManageCategoryTest">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToAccessManageCategoryField"/>
+        </methods>
+      </class> <!-- testscript.ManageCategoryTest -->
+      <class name="testscript.AdminUsersTest">
+        <methods>
+          <include name="verifyUserIsAbleToRedirectSuccessfullyToAdminUsersPage"/>
+          <include name="initializebrowser"/>
+          <include name="closebrowser"/>
+          <include name="verifyUserIsAbleToAddNewUserInformation"/>
+        </methods>
+      </class> <!-- testscript.AdminUsersTest -->
+      <class name="testscript.ManageFooterTextTest">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToAccessManageFooterTextField"/>
+        </methods>
+      </class> <!-- testscript.ManageFooterTextTest -->
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="verifyUserIsAbleToLoginWithValidCredentials"/>
+          <include name="verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword"/>
+          <include name="verifyUserIsAbleToLoginWithInvalidUsernameAndValidPassword"/>
+          <include name="closebrowser"/>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToLoginWithInvalidCredentials"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

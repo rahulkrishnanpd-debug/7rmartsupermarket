@@ -10,21 +10,8 @@ import org.testng.annotations.Parameters;
 public class Base {
 	public WebDriver driver;
 	@BeforeMethod
-	@Parameters("browser")
-	public void initializebrowser(String Browser) throws Exception
+	public void initializebrowser()
 	{
-		if(Browser.equalsIgnoreCase("Chrome"))
-		{
-			driver=new ChromeDriver();
-		}
-		else if(Browser.equalsIgnoreCase("Firefox"))
-		{
-			driver=new FirefoxDriver();
-		}
-		else
-		{
-			throw new Exception("Invalid Browser");
-		}
 		driver=new ChromeDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.manage().window().maximize();

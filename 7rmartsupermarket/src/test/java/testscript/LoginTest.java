@@ -10,7 +10,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
-	@Test(groups={"Regression"})
+	@Test
 	public void verifyUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
 		//String usernamevalue="admin";

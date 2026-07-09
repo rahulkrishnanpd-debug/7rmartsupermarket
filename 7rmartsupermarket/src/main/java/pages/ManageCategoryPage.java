@@ -12,24 +12,30 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constant.Constant;
+import utilities.WaitUtility;
 
-public class ManageCategory {
+public class ManageCategoryPage {
 	public WebDriver driver;
-	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-category']")WebElement managecategory;
+	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-category']")WebElement managecategorymoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newcategory;
 	@FindBy(xpath="//input[@placeholder='Enter the Category']")WebElement entercategory;
-	@FindBy(xpath="//li[@id='134-selectable']")WebElement discount;
+	@FindBy(xpath="//li[@id='1-selectable']")WebElement goodness;
 	@FindBy(xpath="//input[@id='main_img']")WebElement choosefile;
 	@FindBy(xpath="//button[@type='submit']")WebElement save;
+	@FindBy(xpath="//h1[text()='List Categories']")WebElement categorydashboard;
 	
-	public ManageCategory(WebDriver driver)
+	public ManageCategoryPage(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnManageCategory()
+	public void clickOnManageCategoryMoreInfo()
 	{
-		managecategory.click();
+		managecategorymoreinfo.click();
+	}
+	public boolean isCategoryDashboardDisplayed()
+	{
+		return categorydashboard.isDisplayed();
 	}
 	public void clickOnNewCategory()
 	{
@@ -42,7 +48,7 @@ public class ManageCategory {
 	public void clickOnDiscount()
 	{
 		Actions action = new Actions(driver);
-		action.moveToElement(discount).click().perform();
+		action.moveToElement(goodness).click().perform();
 	}
 	public void clickOnChooseFile()
 	{
@@ -53,5 +59,6 @@ public class ManageCategory {
 		Actions action=new Actions(driver);
 		action.moveToElement(save).click().perform();
 	}
+
 
 }
