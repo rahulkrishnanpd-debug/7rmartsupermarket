@@ -10,7 +10,7 @@ import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base {
-	@Test
+	@Test(description="Test case for ManageNews section")
 	public void verifyUserIsAbleToAccessManageNewsPageSuccessfully() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
