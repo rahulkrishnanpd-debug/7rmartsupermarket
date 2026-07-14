@@ -21,9 +21,9 @@ public class ManageNewsTest extends Base {
 		loginpage.signIn();
 		ManageNewsPage news=new ManageNewsPage(driver);
 		String enterthenews=ExcelUtility.getStringData(1, 0, "newspage");
-		//news.clickOnManageNewsmoreinfo();
-		//boolean managenewsdisplayed=news.isManageNewsDashboardDisplayed();
-		//Assert.assertTrue(managenewsdisplayed);
+		news.clickOnManageNewsmoreinfo();
+		boolean managenewsdisplayed=news.isManageNewsDashboardDisplayed();
+		Assert.assertTrue(managenewsdisplayed);
 		news.clickOnNew();
 		news.enterNews(enterthenews);
 		news.clickOnSave();
