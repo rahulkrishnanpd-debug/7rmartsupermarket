@@ -25,7 +25,7 @@ public class AdminUsersTest extends Base {
 		//admin.clickOnAlert();
 		
 	}
-	@Test
+	@Test(description="Test case for AdminUsers section")
 	public void verifyUserIsAbleToAddNewUserInformation() throws IOException
 	{
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");

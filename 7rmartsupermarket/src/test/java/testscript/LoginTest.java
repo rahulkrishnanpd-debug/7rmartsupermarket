@@ -10,7 +10,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
-	@Test(description="Test case for Logging in")
+	@Test(description="Test case for Logging in with valid credentials")
 	public void verifyUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
 		//String usernamevalue="admin";
@@ -26,7 +26,7 @@ public class LoginTest extends Base {
 		boolean homepage=loginpage.isDashboardDisplayed();
 		Assert.assertTrue(homepage);
 	}
-	@Test
+	@Test(description="Test case for Logging in with valid username and invalid password")
 	public void verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(2, 0, "loginpage");
@@ -41,7 +41,7 @@ public class LoginTest extends Base {
 		Assert.assertTrue(alert);
 		
 	}
-	@Test
+	@Test(description="Test case for Logging in with invalid username and valid password")
 	public void verifyUserIsAbleToLoginWithInvalidUsernameAndValidPassword() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(3, 0, "loginpage");
@@ -56,7 +56,7 @@ public class LoginTest extends Base {
 		Assert.assertTrue(alert);
 		
 	}
-	@Test
+	@Test(description="Test case for Logging in with invalid credentials")
 	public void verifyUserIsAbleToLoginWithInvalidCredentials() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(4, 0, "loginpage");
