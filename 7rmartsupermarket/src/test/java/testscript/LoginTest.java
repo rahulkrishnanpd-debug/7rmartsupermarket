@@ -10,7 +10,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
-	@Test
+	@Test(description="Test case for Logging in")
 	public void verifyUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
 		//String usernamevalue="admin";

@@ -9,7 +9,7 @@ import pages.ManageFooterTextPage;
 import utilities.ExcelUtility;
 
 public class ManageFooterTextTest extends Base {
-	@Test
+	@Test(description="Test case for ManageFooterText secton")
 	public void verifyUserIsAbleToAccessManageFooterTextField() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

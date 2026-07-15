@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class ManageCategoryTest extends Base {
-	@Test
+	@Test(description="Test case for ManageCategory section")
 	public void verifyUserIsAbleToAccessManageCategoryField() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

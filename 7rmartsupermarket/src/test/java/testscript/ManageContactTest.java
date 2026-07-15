@@ -9,7 +9,7 @@ import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base {
-	@Test
+	@Test(description="Test case for ManageContact section")
 	public void userIsAbleToAccessManageContactModule() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

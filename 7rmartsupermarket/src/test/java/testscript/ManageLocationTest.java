@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageLocationTest extends Base {
 	
-	@Test
+	@Test(description="Test case for ManageLocation section")
 	public void verifyUserIsAbleToAccessManageLocationPage() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

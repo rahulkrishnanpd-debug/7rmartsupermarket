@@ -11,7 +11,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class AdminUsersTest extends Base {
-	@Test
+	@Test(description="Test case for AdminUsers section")
 	public void verifyUserIsAbleToRedirectSuccessfullyToAdminUsersPage() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
