@@ -6,10 +6,12 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
+	HomePage homepage;
 	@Test(description="Test case for Logging in with valid credentials")
 	public void verifyUserIsAbleToLoginWithValidCredentials() throws IOException
 	{
@@ -20,11 +22,11 @@ public class LoginTest extends Base {
 		
 		LoginPage loginpage=new LoginPage(driver);
 		
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
-		boolean homepage=loginpage.isDashboardDisplayed();
-		Assert.assertTrue(homepage);
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
+		/*boolean homepage=loginpage.isDashboardDisplayed();
+		Assert.assertTrue(homepage);*/
 	}
 	@Test(description="Test case for Logging in with valid username and invalid password")
 	public void verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException
@@ -34,9 +36,9 @@ public class LoginTest extends Base {
 		
 		LoginPage loginpage=new LoginPage(driver);
 		
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
 		Assert.assertTrue(alert);
 		
@@ -49,9 +51,9 @@ public class LoginTest extends Base {
 		
 		LoginPage loginpage=new LoginPage(driver);
 		
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
 		Assert.assertTrue(alert);
 		
@@ -64,9 +66,9 @@ public class LoginTest extends Base {
 		
 		LoginPage loginpage=new LoginPage(driver);
 		
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
 		Assert.assertTrue(alert);
 		

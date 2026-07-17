@@ -7,10 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+
 
 public class AdminUsersPage {
     public WebDriver driver;
-	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']")WebElement adminusersmoreinfo;
+	//@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']")WebElement adminusersmoreinfo;
 	@FindBy(xpath="//a[contains(@class,'btn btn-rounded btn-danger')]")WebElement newuser;
 	@FindBy(xpath="//input[@id='username']")WebElement username;
 	@FindBy(xpath="//input[@id='password']")WebElement password;
@@ -26,39 +28,47 @@ public class AdminUsersPage {
 	
 	}
 	
-	public void clickOnAdminUsersMoreInfo()
+	/*public void clickOnAdminUsersMoreInfo()
 	{
 		adminusersmoreinfo.click();
-	}
-	public boolean isAdminDashboardDisplayed()
+	}*/
+	/*public boolean isAdminDashboardDisplayed()
 	{
 		return adminusersdashboard.isDisplayed();
-	}
-	public void clickOnAlert()
+	}*/
+	public AdminUsersPage clickOnAlert()
 	{
 		Alert alert=driver.switchTo().alert();
 		alert.accept();
+		return this;
 	}
-	public void clickOnNew()
+	public AdminUsersPage clickOnNew()
 	{
 		newuser.click();
+		return this;
 	}
-	public void enterUserName(String usernamevalue)
+	public AdminUsersPage enterUserName(String usernamevalue)
 	{
 		username.sendKeys(usernamevalue);
+		return this;
 	}
-	public void enterPassword(String passwordvalue)
+	public AdminUsersPage enterPassword(String passwordvalue)
 	{
 		password.sendKeys(passwordvalue);
+		return this;
 	}
-	public void dropDownVisibleText(String usertype)
+	public AdminUsersPage dropDownVisibleText(String usertype)
 	{
-		Select select=new Select(dropdown);
-		select.selectByVisibleText(usertype);
+		//Select select=new Select(dropdown);
+		//select.selectByVisibleText(usertype);
+		PageUtility pageutility=new PageUtility();
+		pageutility.dropDownIndex(dropdown, 3);
+		return this;
 	}
-	public void save()
+	public AdminUsersPage save()
 	{
 		save.click();
+		return this;
 	}
 	
 	public boolean isUserCreatedAlertDisplayed()

@@ -5,11 +5,11 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import pages.LogOutPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
-public class LogOutTest extends Base {
+public class HomeTest extends Base {
 	
 	@Test(description="Test case for LoggingOut")
 	public void verifyUserIsAbleToLogOutSuccessfully() throws IOException
@@ -21,7 +21,7 @@ public class LogOutTest extends Base {
 		loginpage.enterPassword(passwordvalue);
 		loginpage.signIn();
 		
-		LogOutPage logout=new LogOutPage(driver);
+		HomePage logout=new HomePage(driver);
 		
 		logout.clickOnDropDown();
 		logout.clickOnLogOut();

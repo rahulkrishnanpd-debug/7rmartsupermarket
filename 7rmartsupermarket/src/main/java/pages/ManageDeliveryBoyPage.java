@@ -10,7 +10,7 @@ import utilities.PageUtility;
 
 public class ManageDeliveryBoyPage {
 	public WebDriver driver;
-	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy']")WebElement managedeliveryboymoreinfo;
+	//@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy']")WebElement managedeliveryboymoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newdeliveryboy;
 	@FindBy(xpath="//input[@id='name']")WebElement deliveryboyname;
 	@FindBy(xpath="//input[@id='email']")WebElement deliveryboyemail;
@@ -27,50 +27,58 @@ public class ManageDeliveryBoyPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnManageDeliveryBoyMoreInfo()
+	/*public void clickOnManageDeliveryBoyMoreInfo()
 	{
 		managedeliveryboymoreinfo.click();
-	}
-	public void clickOnNewButton()
+	}*/
+	public ManageDeliveryBoyPage clickOnNewButton()
 	{
 		newdeliveryboy.click();
+		return this;
 	}
-	public void enterName(String name)
+	public ManageDeliveryBoyPage enterName(String name)
 	{
 		deliveryboyname.sendKeys(name);
+		return this;
 	}
-	public void enterEmail(String email)
+	public ManageDeliveryBoyPage enterEmail(String email)
 	{
 		deliveryboyemail.sendKeys(email);
+		return this;
 	}
-	public void enterPhonenumber(String phone)
+	public ManageDeliveryBoyPage enterPhonenumber(String phone)
 	{
 		deliveryboyphonenumber.sendKeys(phone);
+		return this;
 	}
-	public void enterAddress(String address)
+	public ManageDeliveryBoyPage enterAddress(String address)
 	{
 		deliveryboyaddress.sendKeys(address);
+		return this;
 	}
-	public void enterUsername(String username)
+	public ManageDeliveryBoyPage enterUsername(String username)
 	{
 		deliveryboyusername.clear();
 		deliveryboyusername.sendKeys(username);
+		return this;
 	}
-	public void enterPassword(String password)
+	public ManageDeliveryBoyPage enterPassword(String password)
 	{
 		deliveryboypassword.clear();
 		deliveryboypassword.sendKeys(password);
+		return this;
 	}
-	public void clickOnSave()
+	public ManageDeliveryBoyPage clickOnSave()
 	{
 		PageUtility scroll=new PageUtility();
 		scroll.mousehover(driver, button);
 		button.click();
+		return this;
 	}
-	public boolean isDeliveryBoyPageDisplayed()
+	/*public boolean isDeliveryBoyPageDisplayed()
 	{
 		return deliveryboypage.isDisplayed();
-	}
+	}*/
 	public boolean isDetailsCreatedDisplayed()
 	{
 		return detailscreated.isDisplayed();

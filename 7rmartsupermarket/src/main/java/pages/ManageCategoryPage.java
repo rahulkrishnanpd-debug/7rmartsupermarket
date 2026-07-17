@@ -13,7 +13,7 @@ import constant.Constant;
 
 public class ManageCategoryPage {
 	public WebDriver driver;
-	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-category']")WebElement managecategorymoreinfo;
+	//@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-category']")WebElement managecategorymoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newcategory;
 	@FindBy(xpath="//input[@placeholder='Enter the Category']")WebElement entercategory;
 	@FindBy(xpath="//li[@id='1-selectable']")WebElement goodness;
@@ -26,35 +26,40 @@ public class ManageCategoryPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnManageCategoryMoreInfo()
+	/*public void clickOnManageCategoryMoreInfo()
 	{
 		managecategorymoreinfo.click();
-	}
-	public boolean isCategoryDashboardDisplayed()
+	}*/
+	/*public boolean isCategoryDashboardDisplayed()
 	{
 		return categorydashboard.isDisplayed();
-	}
-	public void clickOnNewCategory()
+	}*/
+	public ManageCategoryPage clickOnNewCategory()
 	{
 		newcategory.click();
+		return this;
 	}
-	public void enterCategory(String categoryname)
+	public ManageCategoryPage enterCategory(String categoryname)
 	{
 		entercategory.sendKeys(categoryname);
+		return this;
 	}
-	public void clickOnDiscount()
+	public ManageCategoryPage clickOnDiscount()
 	{
 		Actions action = new Actions(driver);
 		action.moveToElement(goodness).click().perform();
+		return this;
 	}
-	public void clickOnChooseFile()
+	public ManageCategoryPage clickOnChooseFile()
 	{
 		choosefile.sendKeys(Constant.LAYSIMG);
+		return this;
 	}
-	public void clickOnSave()
+	public ManageCategoryPage clickOnSave()
 	{
 		Actions action=new Actions(driver);
 		action.moveToElement(save).click().perform();
+		return this;
 	}
 
 

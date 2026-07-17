@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ManageNewsPage {
 	public WebDriver driver;
-	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-news']")WebElement managenews;
+	//@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-news']")WebElement managenewsmoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']")WebElement newbutton;
 	@FindBy(xpath="//textarea[@placeholder='Enter the news']")WebElement enternews;
 	@FindBy(xpath="//button[@name='create']")WebElement save;
@@ -20,27 +20,30 @@ public class ManageNewsPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickOnManageNewsmoreinfo()
+	/*public void clickOnManageNewsmoreinfo()
 	{
 		Actions action=new Actions(driver);
-		action.moveToElement(managenews).click().perform();
+		action.moveToElement(managenewsmoreinfo).click().perform();
 		
-	}
-	public boolean isManageNewsDashboardDisplayed()
+	}*/
+	/*public boolean isManageNewsDashboardDisplayed()
 	{
 		return managenewsdashboard.isDisplayed();
-	}
-	public void clickOnNew()
+	}*/
+	public ManageNewsPage clickOnNew()
 	{
 		newbutton.click();
+		return this;
 	}
-	public void enterNews(String enterthenews)
+	public ManageNewsPage enterNews(String enterthenews)
 	{
 		enternews.sendKeys(enterthenews);
+		return this;
 	}
-	public void clickOnSave()
+	public ManageNewsPage clickOnSave()
 	{
 		save.click();
+		return this;
 	}
 	public boolean isNewsDisplayed()
 	{
