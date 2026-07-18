@@ -33,10 +33,10 @@ public LoginPage(WebDriver driver) {
 		signin.click();
 		return new HomePage(driver);
 	}
-	/*public boolean isDashboardDisplayed()
+	public boolean isDashboardDisplayed()
 	{
 		return dashboard.isDisplayed();
-	}*/
+	}
 	public boolean isAlertMessageDisplayed()
 	{
 		return alert.isDisplayed();

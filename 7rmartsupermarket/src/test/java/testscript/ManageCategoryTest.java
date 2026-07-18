@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
@@ -31,13 +32,13 @@ public class ManageCategoryTest extends Base {
 		
 		//String categoryname=ExcelUtility.getStringData(1, 0, "managecategorypage");
 		//category=homepage.clickOnManageCategoryMoreInfo();
-		//boolean listcategory=category.isCategoryDashboardDisplayed();
-		//Assert.assertTrue(listcategory);
 		category.clickOnNewCategory().enterCategory(categoryname).clickOnDiscount().clickOnChooseFile().clickOnSave();
 		//category.enterCategory(categoryname);
 		//category.clickOnDiscount();
 		//category.clickOnChooseFile();
 		//category.clickOnSave();
+		//boolean listcategory=category.isCategoryDashboardDisplayed();
+		//Assert.assertTrue(listcategory,Constant.CATEGORYPAGE);
 		
 	}
 

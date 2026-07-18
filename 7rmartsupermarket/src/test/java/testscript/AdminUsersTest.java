@@ -6,6 +6,7 @@ import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -52,7 +53,7 @@ public class AdminUsersTest extends Base {
 	    admin.dropDownVisibleText(usertype);
 	    admin.save();*/
 	    boolean useriscreated=admin.isUserCreatedAlertDisplayed();
-	    Assert.assertTrue(useriscreated);
+	    Assert.assertTrue(useriscreated,Constant.ADMINPAGE);
 }
 
 }

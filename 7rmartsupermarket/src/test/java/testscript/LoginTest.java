@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -25,8 +26,8 @@ public class LoginTest extends Base {
 		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
 		//loginpage.enterPassword(passwordvalue);
 		homepage=loginpage.signIn();
-		/*boolean homepage=loginpage.isDashboardDisplayed();
-		Assert.assertTrue(homepage);*/
+		boolean homepage=loginpage.isDashboardDisplayed();
+		Assert.assertTrue(homepage,Constant.LOGINVALIDCREDENTIALS);
 	}
 	@Test(description="Test case for Logging in with valid username and invalid password")
 	public void verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword() throws IOException
@@ -40,7 +41,7 @@ public class LoginTest extends Base {
 		//loginpage.enterPassword(passwordvalue);
 		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGININVALIDPASSWORD);
 		
 	}
 	@Test(description="Test case for Logging in with invalid username and valid password")
@@ -55,7 +56,7 @@ public class LoginTest extends Base {
 		//loginpage.enterPassword(passwordvalue);
 		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGININVALIDUSERNAME);
 		
 	}
 	@Test(description="Test case for Logging in with invalid credentials")
@@ -70,7 +71,7 @@ public class LoginTest extends Base {
 		//loginpage.enterPassword(passwordvalue);
 		homepage=loginpage.signIn();
 		boolean alert=loginpage.isAlertMessageDisplayed();
-		Assert.assertTrue(alert);
+		Assert.assertTrue(alert,Constant.LOGININVALIDCREDENTIALS);
 		
 	} 
 

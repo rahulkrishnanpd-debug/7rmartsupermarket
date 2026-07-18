@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageDeliveryBoyPage;
@@ -43,7 +44,7 @@ public class ManageDeliveryBoyTest extends Base {
 		deliveryboy.enterPassword(deliverypassword);
 		deliveryboy.clickOnSave();*/
 		boolean detailsalreadycreated=deliveryboy.isDetailsCreatedDisplayed();
-		Assert.assertTrue(detailsalreadycreated);
+		Assert.assertTrue(detailsalreadycreated,Constant.DELIVERYBOYPAGE);
 	
 	}
 }
