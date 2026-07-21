@@ -11,6 +11,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
+	HomePage home;
 	
 	@Test(description="Test case for LoggingOut")
 	public void verifyUserIsAbleToLogOutSuccessfully() throws IOException
@@ -18,14 +19,14 @@ public class HomeTest extends Base {
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
 		String passwordvalue=ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.signIn();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		home=loginpage.signIn();
 		
 		HomePage logout=new HomePage(driver);
 		
-		logout.clickOnDropDown();
-		logout.clickOnLogOut();
+		logout.clickOnDropDown().clickOnLogOut();
+		//logout.clickOnLogOut();
 		boolean loggedoutsuccessfully=logout.isLoginPageDisplayed();
 		Assert.assertTrue(loggedoutsuccessfully,Constant.LOGGINGOUTFAILED);
 	}

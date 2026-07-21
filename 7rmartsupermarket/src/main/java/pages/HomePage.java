@@ -53,13 +53,15 @@ public class HomePage {
 	
 	
 	
-	public void clickOnDropDown()
+	public HomePage clickOnDropDown()
 	{
 		dropdown.click();
+		return new HomePage(driver);
 	}
-	public void clickOnLogOut()
+	public HomePage clickOnLogOut()
 	{
 		logout.click();
+		return new HomePage(driver);
 	}
 	public boolean isLoginPageDisplayed()
 	{
