@@ -7,6 +7,42 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
+      <class name="testscript.HomeTest">
+        <methods>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToLogOutSuccessfully"/>
+          <include name="browserQuit"/>
+        </methods>
+      </class> <!-- testscript.HomeTest -->
+      <class name="testscript.ManageDeliveryBoyTest">
+        <methods>
+          <include name="initializebrowser"/>
+          <include name="browserQuit"/>
+          <include name="verifyUserIsAbleToAccessManageDeliveryBoyPage"/>
+        </methods>
+      </class> <!-- testscript.ManageDeliveryBoyTest -->
+      <class name="testscript.AdminUsersTest">
+        <methods>
+          <include name="verifyUserIsAbleToRedirectSuccessfullyToAdminUsersPage"/>
+          <include name="initializebrowser"/>
+          <include name="browserQuit"/>
+          <include name="verifyUserIsAbleToAddNewUserInformation"/>
+        </methods>
+      </class> <!-- testscript.AdminUsersTest -->
+      <class name="testscript.ManageLocationTest">
+        <methods>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToAccessManageLocationPage"/>
+          <include name="browserQuit"/>
+        </methods>
+      </class> <!-- testscript.ManageLocationTest -->
+      <class name="testscript.ManageCategoryTest">
+        <methods>
+          <include name="initializebrowser"/>
+          <include name="verifyUserIsAbleToAccessManageCategoryField"/>
+          <include name="browserQuit"/>
+        </methods>
+      </class> <!-- testscript.ManageCategoryTest -->
       <class name="testscript.ManageNewsTest">
         <methods>
           <include name="verifyUserIsAbleToAccessManageNewsPageSuccessfully"/>
@@ -14,6 +50,16 @@
           <include name="browserQuit"/>
         </methods>
       </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="verifyUserIsAbleToLoginWithValidCredentials"/>
+          <include name="verifyUserIsAbleToLoginWithValidUsernameAndInvalidPassword"/>
+          <include name="verifyUserIsAbleToLoginWithInvalidUsernameAndValidPassword"/>
+          <include name="initializebrowser"/>
+          <include name="browserQuit"/>
+          <include name="verifyUserIsAbleToLoginWithInvalidCredentials"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

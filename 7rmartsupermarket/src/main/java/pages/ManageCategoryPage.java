@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import constant.Constant;
+import utilities.PageUtility;
 
 
 public class ManageCategoryPage {
@@ -46,8 +47,10 @@ public class ManageCategoryPage {
 	}
 	public ManageCategoryPage clickOnDiscount()
 	{
-		Actions action = new Actions(driver);
-		action.moveToElement(goodness).click().perform();
+		//Actions action = new Actions(driver);
+		//action.moveToElement(goodness).click().perform();
+	   PageUtility utility=new PageUtility();
+	   utility.mousehover(driver, goodness);
 		return this;
 	}
 	public ManageCategoryPage clickOnChooseFile()
@@ -57,8 +60,10 @@ public class ManageCategoryPage {
 	}
 	public ManageCategoryPage clickOnSave()
 	{
-		Actions action=new Actions(driver);
-		action.moveToElement(save).click().perform();
+		//Actions action=new Actions(driver);
+		//action.moveToElement(save).click().perform();
+		PageUtility action=new PageUtility();
+		action.mousehover(driver, save);
 		return this;
 	}
 
